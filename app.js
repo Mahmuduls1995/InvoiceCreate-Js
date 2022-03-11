@@ -75,4 +75,17 @@ function totalCalculation() {
   document.getElementById("grand-total-2").innerText = subTotal + tax;
 }
 
+function calculateSubTotal() {
+  let subTotal = 0;
 
+  const cost = document.getElementsByClassName("item-total");
+
+  for (let i = 0; i < cost.length; i++) {
+    const element = cost[i]; //<td class="item-total">35</td>
+    const price = parseInt(element.innerText);
+
+    subTotal = subTotal + price;
+  }
+
+  return subTotal;
+}
